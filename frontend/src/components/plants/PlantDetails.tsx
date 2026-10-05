@@ -35,10 +35,11 @@ interface PlantDetailsProps {
 }
 
 const noop = () => {};
+const asyncNoop = async () => {};
 
 const PlantDetails: React.FC<PlantDetailsProps> = ({
   plant,
-  onUpdate = noop,
+  onUpdate = asyncNoop,
   onAddMeasurement,
   onUpdateMeasurement = noop,
   onDeleteMeasurement = noop,
