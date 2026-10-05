@@ -27,7 +27,7 @@ interface PlantDetailsProps {
   plant: Plant;
   onUpdate?: (plantData: Partial<Plant>) => Promise<void>;
   onAddMeasurement?: (data: any) => Promise<void>;
-  onUpdateMeasurement?: (measurement: any) => void;
+  onUpdateMeasurement?: (measurement: any) => Promise<void>;
   onDeleteMeasurement?: (measurementId: number) => void;
   onAddDisease?: (data: any) => Promise<void>;
   onUpdateDisease?: (disease: any) => void;
@@ -41,7 +41,7 @@ const PlantDetails: React.FC<PlantDetailsProps> = ({
   plant,
   onUpdate = asyncNoop,
   onAddMeasurement,
-  onUpdateMeasurement = noop,
+  onUpdateMeasurement = asyncNoop,
   onDeleteMeasurement = noop,
   onAddDisease,
   onUpdateDisease = noop,
